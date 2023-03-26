@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/dissmiss"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#2e91d5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:src="@drawable/cross"
+            app:tint="@color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_bkash"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dissmiss" />
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:src="@drawable/img"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/cblogo"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/dissmiss" />
+
+    <TextView
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cblogo"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="visible"
+        android:text="Police Plaza Concord (Level 10, Tower 2) Plot 2,Road 144,Gulshan"
+        android:textSize="11sp"
+        android:gravity="end"
+        android:id="@+id/address"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="visible"
+        android:text="Nagad Fund Transfer"
+        android:textSize="11sp"
+        android:gravity="end"
+        android:id="@+id/fundTransferTxt"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="Community Cash\nTransaction Recipt"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        android:textColor="#2E2E2E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:id="@+id/textLinearlayout"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E8E8E8"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="5dp"
+                android:textColor="#2E2E2E"
+                android:text="Source account/card"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="start"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="5dp"
+                android:text="0020012011047"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="end"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="Amount"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="start"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="00"
+                android:id="@+id/amount"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="end"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="Transaction Time"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="start"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="15/2/22 2:40 pm"
+                android:id="@+id/time"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="end"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="Location"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="start"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="dhaka"
+                android:id="@+id/location"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="end"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="Narration"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="start"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                tools:text="to bksh"
+                android:id="@+id/narration"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="end"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E8E8E8"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="5dp"
+                android:text="Transaction Info"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="start"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="number"
+                android:id="@+id/paymentTypeNumberTxt"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="start"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="asdasd"
+                android:id="@+id/number"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="end"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="Reference No."
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="start"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="TXI012V"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="end"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BFBFBF"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="Total"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="start"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="visible"
+                android:layout_margin="3dp"
+                android:text="BDT 0.00"
+                android:id="@+id/totalAmount"
+                android:textColor="#2E2E2E"
+                android:layout_weight="1"
+                android:textSize="11sp"
+                android:gravity="end"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/seal"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/successseal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLinearlayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sharePdf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E8E8E8"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:paddingVertical="0dp"
+        android:text="Share Reciept"
+        android:textAllCaps="false"
+        app:cornerRadius="8dp"
+        android:textSize="14sp"
+        app:iconGravity="end"
+        app:iconTint="#83878787"
+        android:textColor="#878787"
+        app:layout_constraintBottom_toTopOf="@+id/downloadPdf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seal"
+        app:layout_constraintVertical_bias="1.0"
+        app:rippleColor="@color/black" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/downloadPdf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E8E8E8"
+        android:paddingVertical="0dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="Download Reciept"
+        android:textAllCaps="false"
+        android:drawableTint="#83878787"
+        android:textColor="#878787"
+        android:textSize="14sp"
+        app:cornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/black" />
+</androidx.constraintlayout.widget.ConstraintLayout>
