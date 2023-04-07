@@ -27,6 +27,7 @@ import java.util.*
 class PDFConverter {
 
 
+    //convert layout to bitmap image
     @RequiresApi(Build.VERSION_CODES.N)
     fun createPdf(
         context: Context,
@@ -34,7 +35,6 @@ class PDFConverter {
         activity: Activity
     ) {
         val inflater = LayoutInflater.from(context)
-        // val view = inflater.inflate(R.layout.status_dialog, null)
         val view= StatusDialogBinding.inflate(inflater)
         view.dissmiss.visibility=View.INVISIBLE
         view.downloadPdf.visibility=View.GONE
@@ -62,6 +62,7 @@ class PDFConverter {
 
 
 
+    //view is ready in this step we drawn bitmap
     private fun createBitmapFromView(
         context: Context,
         view: View,
@@ -87,12 +88,14 @@ class PDFConverter {
             view.measuredWidth,
             view.measuredHeight, Bitmap.Config.ARGB_8888
         )
-
+        //Create a bitmap object using the measured width and height
         val canvas = Canvas(bitmap)
         view.draw(canvas)
+        //Since the bitmap has been created based on the screen dimensions, a scaled-down version is necessary while generating A4 sized PDF
         return Bitmap.createScaledBitmap(bitmap, view.measuredWidth, view.measuredHeight, true)
     }
 
+    //Attach the bitmap to our PDF
     @RequiresApi(Build.VERSION_CODES.N)
     private fun convertBitmapToPdf(bitmap: Bitmap, context: Context,shouldDownload:Boolean) {
         val pdfDocument = PdfDocument()
@@ -100,7 +103,7 @@ class PDFConverter {
         val page = pdfDocument.startPage(pageInfo)
         page.canvas.drawBitmap(bitmap, 0F, 0F, null)
         pdfDocument.finishPage(page)
-
+        //file path
         val file = File(Environment.getExternalStoragePublicDirectory(
         Environment.DIRECTORY_DOWNLOADS), "payment receipt${Date().time}.pdf")
 
@@ -130,7 +133,7 @@ class PDFConverter {
             pdfDocument.writeTo(FileOutputStream(file))
             sharePdf(context, file)
         }
-
+        //successfully create pdf
         pdfDocument.close()
 
     }

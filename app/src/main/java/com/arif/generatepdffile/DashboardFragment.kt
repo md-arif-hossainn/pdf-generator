@@ -21,14 +21,18 @@ class DashboardFragment : Fragment() {
         binding.nagadBtn.setOnClickListener {
             goPayFragment("Nagad")
         }
+        binding.apiCheckBtn.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_dashboardFragment_to_apiFragment)
+        }
         return binding.root
     }
+
     private fun goPayFragment(Type: String) {
         val bundle = Bundle()
         bundle.putString("Type", Type)
         Navigation.findNavController(requireView())
             .navigate(R.id.action_dashboardFragment_to_paymentFragment,bundle)
-
     }
+
 
 }

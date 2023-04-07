@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_paymentFragment"
             app:destination="@id/paymentFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_apiFragment"
+            app:destination="@id/apiFragment" />
     </fragment>
     <fragment
         android:id="@+id/paymentFragment"
@@ -23,4 +26,9 @@
             android:id="@+id/action_paymentFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/apiFragment"
+        android:name="com.arif.generatepdffile.ApiFragment"
+        android:label="fragment_api"
+        tools:layout="@layout/fragment_api" />
 </navigation>
